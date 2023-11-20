@@ -1,0 +1,185 @@
+@font-face {
+    font-family: "Teko";
+    src: local("Helvetica Neue Bold"),
+      url("../teko/Teko-VariableFont_wght.ttf");
+    font-weight:light;
+}
+
+@font-face {
+    font-family: "Abel";
+    src: local("Helvetica Neue Bold"),
+      url("../abel/Abel-Regular.ttf");
+    font-weight:light;
+}
+
+:root {
+    --nav-bg-color: #d6e5e8;
+    --nav-bg-color-hover: #b8dde5;
+}
+
+body {
+    font-family: Abel;
+    margin: 0;
+    padding: 0;
+    background: rgb(214,229,232);
+    background: linear-gradient(180deg, rgba(214,229,232,0.6684173669467788) 53%, rgba(152,185,191,1) 100%);
+}
+
+header {
+    width: 100%;
+    background-color: var(--nav-bg-color, #d6e5e8);
+    font-family: Teko;
+    & nav {
+        justify-content: center;
+        display: flex;
+        margin-right: 0;
+        & ul.navLinks {
+            list-style-type: none;
+            overflow: hidden;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            display: flex;
+            & li {
+                height: 3em;
+                border-spacing: 20px;
+                & a {
+                    display: inline-block;
+                    text-align: center;
+                    text-decoration: none;
+                    color: #546c6f;
+                    font-weight: 600;
+                    margin-top: 4px;
+                    padding: 5px 16px;
+                    font-size: 2em;
+                }
+                & a:hover {
+                    background-color: var(--nav-bg-color-hover, #b8dde5);
+                }
+            }
+        }
+    }
+}
+
+section {
+    display: flex;
+    font-size: 1.2em;
+    & figure {
+        width: 200px;
+        height: 70dvh;
+        padding: 30px;
+        margin-top: 30px;
+        background-color: var(--nav-bg-color, #d6e5e8);
+        border-radius: 8px;
+        & img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        & figcaption {
+            text-align: center;
+            font-size: 2em;
+            font-weight: 700;
+            color: #4b6163;
+        }
+    }
+}
+@media only screen and (max-width: 850px) {
+    section figure {
+        display: none;
+    }
+}
+
+footer {
+    width: max-content;
+    margin-left: 18px;
+    margin-top: 18px;
+    position: relative;
+    bottom: 0;
+    color: #546c6f;
+    & .contacts {
+        list-style-type: none;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        & li.contact {
+            display: inline-block;
+            width: 2.5em;
+            margin: 10px 10px;
+    
+            & svg {
+                width: 2em;
+                height: 2em;
+                color: #546c6f;
+                padding: 0px 10px;
+                margin-bottom: 10px;
+            }
+    
+            & svg:hover {
+                cursor: pointer;
+            }
+    
+            & span.iconFallback {
+                display: none;
+            }
+    
+            svg:empty + span.iconFallback {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+p {
+    color: #4b6163;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#resume-content {
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 50px;
+    padding: 40px;
+    width: 800px;
+    height: 100%;
+    background-color: var(--nav-bg-color, #d6e5e8);
+    border-radius: 20px;
+    & h3, h4 {
+        color:#4b6163;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    & ol {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        & li {
+            color:#546c6f;
+            font-size: 1.2em;
+        }
+    }
+}
+
+section.for-more {
+    display: inline-block;
+    padding: 30px;
+    margin-left: 25dvw;
+    margin-right: 25dvw;
+    text-align: center;
+    & button {
+        font-family: Abel;
+        font-size: medium;
+        width: 20em;
+        padding: 15px;
+        margin: 20px;
+        position: relative;
+        color:#4b6163;
+        background-color: var(--nav-bg-color, #d6e5e8);
+        border: #b8dde5;
+        border-radius: 20px;
+    }
+    & button:hover {
+        background-color: var(--nav-bg-color-hover, #b8dde5);
+    }
+}

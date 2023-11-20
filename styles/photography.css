@@ -1,0 +1,147 @@
+@font-face {
+    font-family: "Teko";
+    src: local("Helvetica Neue Bold"),
+      url("../teko/Teko-VariableFont_wght.ttf");
+    font-weight:light;
+}
+
+@font-face {
+    font-family: "Abel";
+    src: local("Helvetica Neue Bold"),
+      url("../abel/Abel-Regular.ttf");
+    font-weight:light;
+}
+
+:root {
+    --nav-bg-color: #d6e5e8;
+    --nav-bg-color-hover: #b8dde5;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Abel;
+    margin: 0;
+    padding: 0;
+    background: rgb(2,65,78);
+    background: linear-gradient(142deg, rgba(2,65,78,0.5031512605042017) 29%, rgba(54,113,59,0.49754901960784315) 52%, rgba(111,25,95,0.49754901960784315) 70%, rgba(131,46,21,0.5003501400560224) 91%);
+}
+
+header {
+    width: 100%;
+    background-color: var(--nav-bg-color, #d6e5e8);
+    font-family: Teko;
+    & nav {
+        justify-content: center;
+        display: flex;
+        margin-right: 0;
+        & ul.navLinks {
+            list-style-type: none;
+            overflow: hidden;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            display: flex;
+            & li {
+                height: 3em;
+                border-spacing: 20px;
+                & a {
+                    display: inline-block;
+                    text-align: center;
+                    text-decoration: none;
+                    color: #546c6f;
+                    font-weight: 600;
+                    margin-top: 4px;
+                    padding: 5px 16px;
+                    font-size: 2em;
+                }
+                & a:hover {
+                    background-color: var(--nav-bg-color-hover, #b8dde5);
+                }
+            }
+        }
+    }
+}
+
+main {
+    margin: 40px;
+    text-align: center;
+    & section {
+        width: 50%;
+        margin: auto;
+    }
+    & h2 {
+        color: #546c6f;
+        padding: 20px;
+        background-color: var(--nav-bg-color, #d6e5e8);
+        border-radius: 20px;
+        font-family: Teko;
+    }
+    & iframe {
+        border-radius: 20px;
+        margin-bottom: 50px;
+    }
+}
+
+pre {
+    visibility: hidden;
+}
+
+label {
+    color: #546c6f;
+    padding: 20px;
+    background-color: var(--nav-bg-color, #d6e5e8);
+    border-radius: 20px;
+    font-family: Teko;
+    font-size: 1.2em;
+}
+
+input {
+    color: #546c6f;
+    background-color: var(--nav-bg-color, #d6e5e8);
+    border-radius: 20px;
+    font-family: Teko;
+    font-size: 1.2em;
+}
+
+footer {
+    margin-left: 18px;
+    margin-bottom: 18px;
+    position: absolute;
+    bottom: 30px;
+    color: #546c6f;
+    .contacts {
+        list-style-type: none;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        & li.contact {
+            display: inline-block;
+            width: 2.5em;
+            margin: 10px 10px;
+
+            & svg {
+                width: 2em;
+                height: 2em;
+                color: #546c6f;
+                padding: 0px 10px;
+                margin-bottom: 10px;
+            }
+
+            & svg:hover {
+                cursor: pointer;
+            }
+
+            & span.iconFallback {
+                display: none;
+            }
+
+            svg:empty + span.iconFallback {
+                display: inline-block;
+            }
+        }
+    }
+}

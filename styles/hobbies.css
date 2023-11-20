@@ -1,0 +1,184 @@
+@font-face {
+    font-family: "Teko";
+    src: local("Helvetica Neue Bold"),
+      url("../teko/Teko-VariableFont_wght.ttf");
+    font-weight:light;
+}
+
+@font-face {
+    font-family: "Abel";
+    src: local("Helvetica Neue Bold"),
+      url("../abel/Abel-Regular.ttf");
+    font-weight:light;
+}
+
+:root {
+    --nav-bg-color: #d6e5e8;
+    --nav-bg-color-hover: #b8dde5;
+}
+
+body {
+    font-family: Abel;
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    background-color: #d6e5e8;
+}
+
+header {
+    width: 100%;
+    background-color: var(--nav-bg-color, #d6e5e8);
+    font-family: Teko;
+    & nav {
+        justify-content: center;
+        display: flex;
+        margin-right: 0;
+        & ul.navLinks {
+            list-style-type: none;
+            overflow: hidden;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            display: flex;
+            & li {
+                height: 3em;
+                border-spacing: 20px;
+                & a {
+                    display: inline-block;
+                    text-align: center;
+                    text-decoration: none;
+                    color: #546c6f;
+                    font-weight: 600;
+                    margin-top: 4px;
+                    padding: 5px 16px;
+                    font-size: 2em;
+                }
+                & a:hover {
+                    background-color: var(--nav-bg-color-hover, #b8dde5);
+                }
+            }
+        }
+    }
+}
+
+section {
+    padding: 30px;
+}
+
+h3 {
+    color: #546c6f;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--nav-bg-color, #d6e5e8);
+    border-radius: 20px;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    font-family: Teko;
+}
+
+img {
+    object-fit:cover;
+    padding: 2em;
+    margin: 2em;
+}
+
+footer {
+    width: 50%;
+    margin-left: 18px;
+    margin-top: 18px;
+    position: relative;
+    bottom: 0;
+    color: #546c6f;
+}
+
+section#hobbies {
+    background: rgb(2,65,78);
+    background: linear-gradient(142deg, rgba(2,65,78,0.5031512605042017) 29%, rgba(54,113,59,0.49754901960784315) 52%, rgba(111,25,95,0.49754901960784315) 70%, rgba(131,46,21,0.5003501400560224) 91%);
+    & .hobby-link {
+        text-align: center;
+        margin-top: 5em;
+        & a {
+            padding-top: 1em;
+            padding-left: 3px;
+            padding-right: 3px;
+            margin: 7em;
+            text-decoration: none;
+            font-family: Teko;
+            font-size: larger;
+            color:#ffffff;
+            border: 2px solid #b8dde5;
+            border-radius: 10px;
+        }
+    }
+    & .img-link {
+        text-align: center;
+        & img#music {
+            object-position: 20% 50%;
+        }
+    }
+}
+
+section#bio {
+    background: rgb(214,229,232);
+    background: radial-gradient(circle, rgba(214,229,232,0.805672268907563) 57%, rgba(152,185,191,0.8112745098039216) 100%);
+    & summary {
+        color: #546c6f;
+        padding: 20px;
+        background-color: var(--nav-bg-color, #d6e5e8);
+        border-radius: 20px;
+        margin-left: 25vw;
+        margin-right: 25vw;
+        text-align: center;
+    }
+    & summary:hover {
+        background-color: var(--nav-bg-color-hover, #b8dde5);
+    }
+    & p {
+        font-size: 1.2em;
+    }
+    & p:hover {
+        background-color: var(--nav-bg-color-hover, #b8dde5);
+    }
+}
+
+section > summary + p {
+    color: #546c6f;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    padding: 20px;
+    background-color: var(--nav-bg-color, #d6e5e8);
+    border-radius: 20px;
+    font-size: 1.2vw;
+}
+
+.contacts {
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    & li.contact {
+        display: inline-block;
+        width: 2.5em;
+        margin: 10px 10px;
+
+        & svg {
+            width: 2em;
+            height: 2em;
+            color: #546c6f;
+            padding: 0px 10px;
+            margin-bottom: 10px;
+        }
+
+        & svg:hover {
+            cursor: pointer;
+        }
+
+        & span.iconFallback {
+            display: none;
+        }
+
+        svg:empty + span.iconFallback {
+            display: inline-block;
+        }
+    }
+}

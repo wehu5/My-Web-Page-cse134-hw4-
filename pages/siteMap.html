@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Weiyu Hu's Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="../medias/International-Travel_43678.ico">
+        <style>
+            @font-face {
+                font-family: "Teko";
+                src: local("Helvetica Neue Bold"),
+                url("../teko/Teko-VariableFont_wght.ttf");
+                font-weight:light;
+            }
+            :root {
+                --nav-bg-color: #d6e5e8;
+                --nav-bg-color-hover: #b8dde5;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                background: rgb(138,133,55);
+                background: linear-gradient(142deg, rgba(138,133,55,0.49754901960784315) 26%, rgba(50,117,95,0.5031512605042017) 53%, rgba(2,65,78,0.5031512605042017) 80%, rgba(90,45,111,0.5031512605042017) 116%, rgba(113,43,66,0.5) 152%);
+            }
+
+            header {
+                width: 100%;
+                background-color: var(--nav-bg-color, #d6e5e8);
+                font-family: Teko;
+                & nav {
+                    justify-content: center;
+                    display: flex;
+                    margin-right: 0;
+                    & ul.navLinks {
+                        list-style-type: none;
+                        overflow: hidden;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        padding: 0;
+                        display: flex;
+                        & li {
+                            height: 3em;
+                            border-spacing: 20px;
+                            & a {
+                                display: inline-block;
+                                text-align: center;
+                                text-decoration: none;
+                                color: #546c6f;
+                                font-weight: 600;
+                                margin-top: 4px;
+                                padding: 5px 16px;
+                                font-size: 2em;
+                            }
+                            & a:hover {
+                                background-color: var(--nav-bg-color-hover, #b8dde5);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            footer {
+                margin-left: 18px;
+                margin-top: 18px;
+                position:relative;
+                bottom: 20px;
+            }
+
+            .contacts {
+                list-style-type: none;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+                & li.contact {
+                    display: inline-block;
+                    width: 2.5em;
+                    margin: 10px 10px;
+
+                    & svg {
+                        width: 2em;
+                        height: 2em;
+                        color: #546c6f;
+                        padding: 0px 10px;
+                        margin-bottom: 10px;
+                    }
+
+                    & svg:hover {
+                        cursor: pointer;
+                    }
+
+                    & span.iconFallback {
+                        display: none;
+                    }
+
+                    svg:empty + span.iconFallback {
+                        display: inline-block;
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul class="navLinks">
+                    <li><a href="../index.html"><b>Home Page</b></a></li>
+                    <li><a href="hobbies.html">Hobbies</a></li>
+                    <li><a href="projects.html">Experiences</a></li>
+                    <li><a href="sports.html">Sports Activities</a></li>
+                    <li><a href="siteMap.html">Site Map</a></li>
+                </ul>
+            </nav>
+        </header>
+        <img src="../medias/sitemap.png" style="width: 100%; height: auto">
+        <footer>
+            <ul class="contacts">
+                <li class="contact">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+                            <g fill="none" stroke="#303c42" stroke-linecap="round" stroke-linejoin="round" data-name="<Group>">
+                                <rect width="21" height="21" x="1.5" y="1.5" data-name="<Path>" rx="5.48" ry="5.48"></rect>
+                                <circle cx="12" cy="12" r="5.5" data-name="<Path>"></circle><circle cx="18" cy="5" r=".5" data-name="<Path>"></circle>
+                            </g>
+                        </svg>
+                        <span class="iconFallback">Instagram</span>
+                </li>
+                <li class="contact">
+                    <a href="w7hu@ucsd.edu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="email">
+                        <path fill="#222" d="M53.42 53.32H10.58a8.51 8.51 0 0 1-8.5-8.5V19.18a8.51 8.51 0 0 1 8.5-8.5h42.84a8.51 8.51 0 0 1 8.5 8.5v25.64a8.51 8.51 0 0 1-8.5 8.5ZM10.58 13.68a5.5 5.5 0 0 0-5.5 5.5v25.64a5.5 5.5 0 0 0 5.5 5.5h42.84a5.5 5.5 0 0 0 5.5-5.5V19.18a5.5 5.5 0 0 0-5.5-5.5Z"></path>
+                        <path fill="#222" d="M32 38.08a8.51 8.51 0 0 1-5.13-1.71L3.52 18.71a1.5 1.5 0 1 1 1.81-2.39L28.68 34a5.55 5.55 0 0 0 6.64 0l23.35-17.68a1.5 1.5 0 1 1 1.81 2.39L37.13 36.37A8.51 8.51 0 0 1 32 38.08Z"></path>
+                        <path fill="#222" d="M4.17 49.14a1.5 1.5 0 0 1-1-2.62l18.4-16.41a1.5 1.5 0 0 1 2 2.24L5.17 48.76a1.46 1.46 0 0 1-1 .38zm55.66 0a1.46 1.46 0 0 1-1-.38l-18.4-16.41a1.5 1.5 0 1 1 2-2.24l18.39 16.41a1.5 1.5 0 0 1-1 2.62z"></path>
+                    </svg>
+                    <span class="iconFallback">Email</span>
+                    </a>
+                </li>
+                <li class="contact">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 128 128" id="Linkedin">
+                        <path fill="#000000" d="M104 8a16 16 0 0 1 16 16v80a16 16 0 0 1-16 16H24a16 16 0 0 1-16-16V24A16 16 0 0 1 24 8h80m0-8H24A24.07 24.07 0 0 0 0 24v80a24.07 24.07 0 0 0 24 24h80a24.07 24.07 0 0 0 24-24V24a24.07 24.07 0 0 0-24-24Z" class="color0177b5 svgShape"></path>
+                        <path fill="#000000" d="M92 32H36a4 4 0 0 0-4 4v56a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V36a4 4 0 0 0-4-4ZM52 86H42V56h10Zm-5-34a6 6 0 1 1 6-6 6 6 0 0 1-6 6Zm39 34H76V66c0-1.66-2.24-3-5-3-4 0-5 5.34-5 7v16H56V56h10v7c0-5 4.48-7 10-7a10 10 0 0 1 10 10Z" class="color0177b5 svgShape"></path>
+                    </svg>
+                    <span class="iconFallback">Linkedin</span>
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>

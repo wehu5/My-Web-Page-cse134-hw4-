@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "Teko";
+    src: local("Helvetica Neue Bold"),
+      url("../teko/Teko-VariableFont_wght.ttf");
+    font-weight:light;
+}
+
+@font-face {
+    font-family: "Abel";
+    src: local("Helvetica Neue Bold"),
+      url("../abel/Abel-Regular.ttf");
+    font-weight:light;
+}
+
+:root {
+    --nav-bg-color: #d6e5e8;
+    --nav-bg-color-hover: #b8dde5;
+}
+
+body {
+    font-family: Abel;
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    background: rgb(138,133,55);
+    background: linear-gradient(142deg, rgba(138,133,55,0.49754901960784315) 26%, rgba(50,117,95,0.5031512605042017) 53%, rgba(2,65,78,0.5031512605042017) 80%, rgba(90,45,111,0.5031512605042017) 116%, rgba(113,43,66,0.5) 152%);
+}
+
+header {
+    width: 100%;
+    background-color: var(--nav-bg-color, #d6e5e8);
+    font-family: Teko;
+    & nav {
+        justify-content: center;
+        display: flex;
+        margin-right: 0;
+        & ul.navLinks {
+            list-style-type: none;
+            overflow: hidden;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            display: flex;
+            & li {
+                height: 3em;
+                border-spacing: 20px;
+            }
+            & a {
+                display: inline-block;
+                text-align: center;
+                text-decoration: none;
+                color: #546c6f;
+                font-weight: 600;
+                margin-top: 4px;
+                padding: 5px 16px;
+                font-size: 2em;
+            }
+            & a:hover {
+                background-color: var(--nav-bg-color-hover, #b8dde5);
+            }
+        }
+    }
+}
+
+main {
+    text-align: center;
+}
+
+section {
+    display: inline-block;
+    margin: 50px;
+    margin-top: 80px;
+}
+
+p {
+    color: #546c6f;
+    background-color: var(--nav-bg-color, #d6e5e8);
+    border: 2px solid #c2e7ec;
+    border-radius: 20px;
+}
+
+video {
+    object-fit: cover;
+    object-position: 50% 50%;
+    border: 2px solid #c2e7ec;
+    border-radius: 20px;
+}
+
+img {
+    border: 2px solid #c2e7ec;
+    border-radius: 20px;
+}
+
+footer {
+    margin-left: 18px;
+    margin-top: 18px;
+    position:absolute;
+    bottom: 50px;
+    color: #546c6f;
+} 
+
+.contacts {
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    & li.contact {
+        display: inline-block;
+        width: 2.5em;
+        margin: 10px 10px;
+
+        & svg {
+            width: 2em;
+            height: 2em;
+            color: #546c6f;
+            padding: 0px 10px;
+            margin-bottom: 10px;
+        }
+
+        & svg:hover {
+            cursor: pointer;
+        }
+
+        & span.iconFallback {
+            display: none;
+        }
+
+        svg:empty + span.iconFallback {
+            display: inline-block;
+        }
+    }
+}
