@@ -26,22 +26,31 @@
         </header>
         <div class="bg"></div>
         <section>
-            <form action="index.html" method="get" class="connectWithMe">
+            <form action="https://httpbin.org/anything" method="post" class="connectWithMe" id="chatBox" oninput="submission.value=Submit">
                 <fieldset>
                     <legend>Question Box</legend>
                     <div>
+                        <label>Name</label>
+                        <input type="text" id="visitorName" name="visitorName" placeholder="Name">
+
+                        <label>Contact Info</label>
+                        <input type="text" id="visitorContact" name="visitorContact" required placeholder="Your Contact">
+
                         <label>Ask me something</label>
-                        <input type="text"  id="visitorQuestion" required placeholder="Your question">
+                        <input type="text"  id="visitorQuestion" name="visitorQuestion" required placeholder="Your question">
                     </div>
                     <div>
-                        <input type="submit" value="Ask">
+                        <input name="possible_bot" value="true" type="hidden">
+                        <input id="ask" type="submit" value="Ask">
                     </div>
                 </fieldset>
             </form>
+            <!-- <output form="chatBox" id="submission" name="submission" for="ask"></output> -->
         </section>
         <footer>
             <ul class="contacts">
                 <li class="contact">
+                    <a href="https://instagram.com/wehu5?igshid=MmVlMjlkMTBhMg==" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
                             <g fill="none" stroke="#303c42" stroke-linecap="round" stroke-linejoin="round" data-name="<Group>">
                                 <rect width="21" height="21" x="1.5" y="1.5" data-name="<Path>" rx="5.48" ry="5.48"></rect>
@@ -49,9 +58,10 @@
                             </g>
                         </svg>
                         <span class="iconFallback">Instagram</span>
+                    </a>
                 </li>
                 <li class="contact">
-                    <a href="w7hu@ucsd.edu">
+                    <a href="mailto:w7hu@ucsd.edu" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="email">
                         <path fill="#222" d="M53.42 53.32H10.58a8.51 8.51 0 0 1-8.5-8.5V19.18a8.51 8.51 0 0 1 8.5-8.5h42.84a8.51 8.51 0 0 1 8.5 8.5v25.64a8.51 8.51 0 0 1-8.5 8.5ZM10.58 13.68a5.5 5.5 0 0 0-5.5 5.5v25.64a5.5 5.5 0 0 0 5.5 5.5h42.84a5.5 5.5 0 0 0 5.5-5.5V19.18a5.5 5.5 0 0 0-5.5-5.5Z"></path>
                         <path fill="#222" d="M32 38.08a8.51 8.51 0 0 1-5.13-1.71L3.52 18.71a1.5 1.5 0 1 1 1.81-2.39L28.68 34a5.55 5.55 0 0 0 6.64 0l23.35-17.68a1.5 1.5 0 1 1 1.81 2.39L37.13 36.37A8.51 8.51 0 0 1 32 38.08Z"></path>
