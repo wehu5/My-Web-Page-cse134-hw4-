@@ -6,19 +6,32 @@
         <title>Weiyu Hu's Portfolio</title>
         <link rel="stylesheet" type="text/css" href="styles/main.css">
         <style>
-            .error .submission {
+            output.submission {
                 display: none;
             }
-            .invalid-input {
-                animation: flash 3s alternate infinite;
+            output.error {
+                display: none;
             }
-            @keyframes flash {
-                0% {
-                    background-color: rgb(255, 199, 199); /* Change to the desired flashing color */
-                }
-                100% {
-                    background-color: inherit;
-                }
+            input:invalid + span + output.error {
+                background-color: rgb(255, 199, 199);
+                border-radius: 5px;   
+                display: block;
+                margin: 5px;
+            }
+            input:valid + span + output.error + output.submission{
+                background-color: rgb(255, 255, 255);
+                border-radius: 5px;   
+                display: block;
+                margin: 5px;
+            }
+            input:required:invalid + span::before{
+                content: '*';
+                color: red;
+                display: inline;
+            }
+
+            input:required:valid + span::before{
+                content: '';
             }
         </style>
         <link rel="icon" type="image/x-icon" href="medias/International-Travel_43678.ico">
@@ -47,21 +60,27 @@
                     <legend>Question Box</legend>
                     <div>
                         <div><label>Name</label></div>
-                        <input type="text" id="visitorName" name="visitorName" placeholder="Name" value ="" maxlength="30">
+                        <input type="text" id="visitorName" name="visitorName" required placeholder="Name" maxlength="30">
+                        <span></span>
+                        <output class="error" name="error">Invalid input</output>
+                        <output class="submission" name="submission">Inputs seem valid</output>
 
                         <div><label>Contact Info</label></div>
-                        <input type="email" id="visitorContact" name="visitorContact" placeholder="Your Email" value ="" maxlength="30">
+                        <input type="email" id="visitorContact" name="visitorContact" required placeholder="Your Email" maxlength="30">
+                        <span></span>
+                        <output class="error" name="error">Invalid input</output>
+                        <output class="submission" name="submission">Inputs seem valid</output>
                             
                         <div><label>Ask me something</label></div>
-                        <input type="text"  id="visitorQuestion" name="visitorQuestion"  placeholder="Your question" value ="">
-                        <p id="count"></p>
+                        <input type="text"  id="visitorQuestion" name="visitorQuestion" required placeholder="Your question" maxlength="50">
+                        <span></span>
+                        <output class="error" name="error">Invalid input</output>
+                        <output class="submission" name="submission">Inputs seem valid</output>
                     </div>
                     <div>
                         <input name="possible_bot" value="true" type="hidden">
                         <input id="ask" type="submit" value="Ask">
                     </div>
-                    <output id="submission" name="submission"></output>
-                    <output id="error" name="error"></output>
                 </fieldset>
             </form>
         </section>
@@ -97,6 +116,5 @@
                 </li>
             </ul>
         </footer>
-        <script src="./scripts/main.js"></script>
     </body>
 </html>
