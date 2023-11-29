@@ -12,6 +12,9 @@
             output.error {
                 display: none;
             }
+            input:invalid {
+                border: 2px dashed red;
+            }
             input:invalid + span + output.error {
                 background-color: rgb(255, 199, 199);
                 border-radius: 5px;   
@@ -60,19 +63,19 @@
                     <legend>Question Box</legend>
                     <div>
                         <div><label>Name</label></div>
-                        <input type="text" id="visitorName" name="visitorName" required placeholder="Name" maxlength="30">
+                        <input type="text" id="visitorName" name="visitorName" required placeholder="Name" pattern="[A-Za-z ]+$" maxlength="30">
                         <span></span>
                         <output class="error" name="error">Invalid input</output>
                         <output class="submission" name="submission">Inputs seem valid</output>
 
                         <div><label>Contact Info</label></div>
-                        <input type="email" id="visitorContact" name="visitorContact" required placeholder="Your Email" maxlength="30">
+                        <input type="email" id="visitorContact" name="visitorContact" required placeholder="Your Email" pattern="([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" maxlength="30">
                         <span></span>
                         <output class="error" name="error">Invalid input</output>
                         <output class="submission" name="submission">Inputs seem valid</output>
                             
                         <div><label>Ask me something</label></div>
-                        <input type="text"  id="visitorQuestion" name="visitorQuestion" required placeholder="Your question" maxlength="50">
+                        <input type="text"  id="visitorQuestion" name="visitorQuestion" required placeholder="Your question" pattern="[A-Za-z0-9\s?!,.'&quot-]+$" maxlength="50">
                         <span></span>
                         <output class="error" name="error">Invalid input</output>
                         <output class="submission" name="submission">Inputs seem valid</output>

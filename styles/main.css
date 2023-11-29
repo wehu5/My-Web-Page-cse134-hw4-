@@ -5,9 +5,29 @@
     font-weight:light;
 }
 
-:root {
+/* :root {
     --nav-bg-color: #d6e5e8;
     --nav-bg-color-hover: #b8dde5;
+} */
+
+[theme="bright"] {
+    --nav-bg-img: url("../medias/DSC00785-min.jpg");
+    --nav-bg-color: #d6e5e8;
+    --nav-bg-color-hover: #b8dde5;
+    --font-color: #546c6f;
+    --dropdown-bg-color: #b5c8cc;
+    --dropdown-border-color: #546c6f;
+    --form-box-color: azure;
+}
+
+[theme="dark"] {
+    --nav-bg-img: url("../medias/ucsbShot.jpg");
+    --nav-bg-color: #52515e;
+    --nav-bg-color-hover: #706f78;
+    --font-color: #b9b7c2;
+    --dropdown-bg-color: #5f5e6a;
+    --dropdown-border-color: #b9b7c2;
+    --form-box-color: #706f78;
 }
 
 body {
@@ -24,7 +44,7 @@ body {
 
 .bg::before {
     content: "";
-    background-image: url("../medias/DSC00785-min.jpg");
+    background-image: var(--nav-bg-img);
     position: absolute;
     background-size:cover;
     top: 0;
@@ -65,7 +85,7 @@ ul.navLinks li a {
     overflow: hidden;
     text-align: center;
     text-decoration: none;
-    color: #546c6f;
+    color: var(--font-color);
     font-weight: 600;
     padding: 5px 16px;
     font-size: 1.5em;
@@ -78,7 +98,7 @@ ul.navLinks li a:hover {
 #myName {
     display: inline;
     text-align: center;
-    color: #546c6f;
+    color: var(--font-color);
     margin: 2px;
     padding: 2px 16px;
     font-size: 2em;
@@ -106,7 +126,7 @@ ul.navLinks li a:hover {
 .menu-button::before,
 .menu-button::after {
     display: block;
-    background-color: #546c6f;
+    background-color: var(--dropdown-border-color);
     position: absolute;
     height: 4px;
     width: 30px;
@@ -130,7 +150,7 @@ ul.navLinks li a:hover {
 }
   
 #menu-toggle:checked + .menu-button-container .menu-button {
-    background: #546c6f;
+    background: var(--dropdown-border-color);
 }
   
 #menu-toggle:checked + .menu-button-container .menu-button::after {
@@ -165,8 +185,8 @@ ul.navLinks li a:hover {
       width:100vw;
       height: 1em;
       padding: 0.5em;
-      border: 1px solid #546c6f;
-      background-color: #b5c8cc;
+      border: 1px solid var(--dropdown-border-color);
+      background-color: var(--dropdown-bg-color);
       transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
@@ -179,7 +199,7 @@ ul.navLinks li a:hover {
       justify-content: center;
       margin: 0;
       width: 100%;
-      background-color: #d6e5e8;
+      background-color: var(--nav-bg-color);
     }
 }
 
@@ -196,7 +216,7 @@ fieldset {
 
 input {
     font-family: Teko;
-    color: #48585a;
+    color: var(--font-color);
     letter-spacing: 0.2rem;
     border-radius: 5px;
     margin: 5px;
@@ -204,21 +224,21 @@ input {
 }
 
 .connectWithMe    {
-    color: #48585a;
+    color: var(--font-color);
     bottom: 0;
     right: 0;
     position: absolute;
 }
 
 legend {
-    background-color: azure;
+    background-color: var(--form-box-color);
     border-radius: 25px;
 }
 
 label {
     padding: 0px 5px;
-    background-color: azure;
-    border-radius: 5px;
+    background-color: var(--form-box-color);
+    border-radius: 34px;
 }
 
 footer {
@@ -226,7 +246,7 @@ footer {
     margin-left: 18px;
     position: absolute;
     bottom: 0;
-    color: #546c6f;
+    color: var(--font-color);
 }
 
 .contacts {
@@ -242,7 +262,7 @@ footer {
         & svg {
             width: 2em;
             height: 2em;
-            color: #546c6f;
+            color: var(--font-color);
             padding: 0px 10px;
             margin-bottom: 10px;
         }
@@ -259,4 +279,12 @@ footer {
             display: inline-block;
         }
     }
+}
+
+path{
+    fill: var(--font-color);
+}
+
+g {
+    stroke: var(--font-color);
 }

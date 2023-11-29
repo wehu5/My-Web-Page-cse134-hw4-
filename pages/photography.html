@@ -5,6 +5,96 @@
         <title>Weiyu Hu's Portfolio</title>
         <link rel="icon" type="image/x-icon" href="../medias/International-Travel_43678.ico">
         <link rel="stylesheet" href="../styles/photography.css" type="text/css">
+        <style>
+            [theme="bright"] {
+                --toggle-bg-color: #b8dde5;
+                --translate-distance: 33px;
+                --mode-bg-color: azure;
+                --font-color: #546c6f;
+            }
+            [theme="dark"] {
+                --toggle-bg-color: #787878;
+                --translate-distance: 0px;
+                --mode-bg-color: #48484e;
+                --font-color: #b9b7c2;
+            }
+            /* light switch from here */
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 65px;
+                height: 34px;
+                margin-top: 0px;
+                margin-left: 0px;
+            }
+
+            .switch input { 
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--toggle-bg-color);
+                -webkit-transition: .4s;
+                transition: .4s;
+                border: 1px dashed #546c6f;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: rgb(255, 255, 255);
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            input:checked + .slider {
+                background-color: var(--toggle-bg-color);
+            }
+
+            input:focus + .slider {
+                box-shadow: 0 0 1px var(--toggle-bg-color);
+            }
+
+            input:checked + .slider:before {
+                -webkit-transform: translateX(var(--translate-distance));
+                -ms-transform: translateX(var(--translate-distance));
+                transform: translateX(var(--translate-distance));
+            }
+
+            /* Rounded sliders */
+            .slider.round {
+                border-radius: 34px;
+            }
+
+            .slider.round:before {
+                border-radius: 50%;
+            }
+
+            #mode-switch {
+                position: absolute;
+                text-align: center;
+                top: 95px;
+                right: 18px;
+                margin-left: 18px;
+                padding-left:10px;
+                padding-right: 10px;
+                color: var(--font-color);
+                background-color: var(--mode-bg-color);
+                border-radius: 5px;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -31,6 +121,13 @@
                 <input type="submit" value="Send">
             </form>
         </main>
+        <section id="mode-switch">
+            <p id="mode-text" style="display: inline-block; font-size:x-large; margin-top: 15px; margin-bottom: 15px;">Bright Mode:</p>
+            <label class="switch" style="padding: 0;">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
+        </section>
         <footer>
             <ul class="contacts">
                 <li class="contact">
@@ -61,5 +158,34 @@
                 </li>
             </ul>
         </footer>
+        <script>
+            const lightSwitch = document.getElementsByClassName('slider')[0];
+            let mode = document.querySelector('[lang="en"]');
+            let modeText = document.getElementById('mode-text');
+
+            if(localStorage.getItem('theme') === null) {
+                localStorage.setItem('mode', mode.getAttribute('theme'));
+                mode.setAttribute('theme', mode.getAttribute('theme'));
+            }
+            else {
+                mode.setAttribute('theme', localStorage.getItem('theme'));
+                modeText.innerHTML = localStorage.getItem('theme') === 'dark' ? 'Dark Mode' : 'Bright Mode';
+            }
+            lightSwitch.addEventListener('click', function(event) {
+                    if(mode.getAttribute('theme') === 'bright') {
+                        mode.setAttribute('theme', 'dark');
+                        modeText.innerHTML = 'Dark Mode';
+                        localStorage.setItem('theme', 'dark');
+                    }
+                    else {
+                        mode.setAttribute('theme', 'bright');
+                        modeText.innerHTML = 'Bright Mode';
+                        localStorage.setItem('theme', 'bright');
+                    }
+                    console.log(mode.theme);
+                    console.log(modeText);
+                }
+            );
+        </script>
     </body>
 </html>

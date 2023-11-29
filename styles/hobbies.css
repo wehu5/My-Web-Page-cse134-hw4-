@@ -1,20 +1,29 @@
 @font-face {
     font-family: "Teko";
-    src: local("Helvetica Neue Bold"),
+    src: local("../teko/Teko-VariableFont_wght.ttf"),
       url("../teko/Teko-VariableFont_wght.ttf");
     font-weight:light;
 }
 
 @font-face {
     font-family: "Abel";
-    src: local("Helvetica Neue Bold"),
+    src: local("../abel/Abel-Regular.ttf"),
       url("../abel/Abel-Regular.ttf");
     font-weight:light;
 }
 
-:root {
+[theme="bright"] {
     --nav-bg-color: #d6e5e8;
     --nav-bg-color-hover: #b8dde5;
+    --font-color: #546c6f;
+    --hobby-font-color: #fff;
+}
+
+[theme="dark"] {
+    --nav-bg-color: #52515e;
+    --nav-bg-color-hover: #706f78;
+    --font-color: #b9b7c2;
+    --hobby-font-color: #b9b7c2;
 }
 
 body {
@@ -22,7 +31,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100dvh;
-    background-color: #d6e5e8;
+    background-color: var(--nav-bg-color);
 }
 
 header {
@@ -47,7 +56,7 @@ header {
                     display: inline-block;
                     text-align: center;
                     text-decoration: none;
-                    color: #546c6f;
+                    color: var(--font-color);
                     font-weight: 600;
                     margin-top: 4px;
                     padding: 5px 16px;
@@ -66,7 +75,7 @@ section {
 }
 
 h3 {
-    color: #546c6f;
+    color: var(--font-color);
     text-align: center;
     padding: 20px;
     background-color: var(--nav-bg-color, #d6e5e8);
@@ -82,13 +91,21 @@ img {
     margin: 2em;
 }
 
+path{
+    fill: var(--font-color);
+}
+
+g {
+    stroke: var(--font-color);
+}
+
 footer {
     width: 50%;
     margin-left: 18px;
     margin-top: 18px;
     position: relative;
     bottom: 0;
-    color: #546c6f;
+    color: var(--font-color);
 }
 
 section#hobbies {
@@ -105,8 +122,8 @@ section#hobbies {
             text-decoration: none;
             font-family: Teko;
             font-size: larger;
-            color:#ffffff;
-            border: 2px solid #b8dde5;
+            color:var(--hobby-font-color);
+            border: 2px solid var(--hobby-font-color);
             border-radius: 10px;
         }
     }
@@ -122,7 +139,7 @@ section#bio {
     background: rgb(214,229,232);
     background: radial-gradient(circle, rgba(214,229,232,0.805672268907563) 57%, rgba(152,185,191,0.8112745098039216) 100%);
     & summary {
-        color: #546c6f;
+        color: var(--font-color);
         padding: 20px;
         background-color: var(--nav-bg-color, #d6e5e8);
         border-radius: 20px;
@@ -135,6 +152,7 @@ section#bio {
     }
     & p {
         font-size: 1.2em;
+        color: var(--font-color);
     }
     & p:hover {
         background-color: var(--nav-bg-color-hover, #b8dde5);
@@ -142,7 +160,7 @@ section#bio {
 }
 
 section > summary + p {
-    color: #546c6f;
+    color: var(--font-color);
     margin-left: 25vw;
     margin-right: 25vw;
     padding: 20px;
@@ -164,7 +182,6 @@ section > summary + p {
         & svg {
             width: 2em;
             height: 2em;
-            color: #546c6f;
             padding: 0px 10px;
             margin-bottom: 10px;
         }

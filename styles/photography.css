@@ -1,20 +1,27 @@
 @font-face {
     font-family: "Teko";
-    src: local("Helvetica Neue Bold"),
+    src: local("../teko/Teko-VariableFont_wght.ttf"),
       url("../teko/Teko-VariableFont_wght.ttf");
     font-weight:light;
 }
 
 @font-face {
     font-family: "Abel";
-    src: local("Helvetica Neue Bold"),
+    src: local("../abel/Abel-Regular.ttf"),
       url("../abel/Abel-Regular.ttf");
     font-weight:light;
 }
 
-:root {
+[theme="bright"] {
     --nav-bg-color: #d6e5e8;
     --nav-bg-color-hover: #b8dde5;
+    --font-color: #546c6f;
+}
+
+[theme="dark"] {
+    --nav-bg-color: #52515e;
+    --nav-bg-color-hover: #706f78;
+    --font-color: #b9b7c2;
 }
 
 html {
@@ -52,7 +59,7 @@ header {
                     display: inline-block;
                     text-align: center;
                     text-decoration: none;
-                    color: #546c6f;
+                    color: var(--font-color);
                     font-weight: 600;
                     margin-top: 4px;
                     padding: 5px 16px;
@@ -74,7 +81,7 @@ main {
         margin: auto;
     }
     & h2 {
-        color: #546c6f;
+        color: var(--font-color);
         padding: 20px;
         background-color: var(--nav-bg-color, #d6e5e8);
         border-radius: 20px;
@@ -91,7 +98,7 @@ pre {
 }
 
 label {
-    color: #546c6f;
+    color: var(--font-color);
     padding: 20px;
     background-color: var(--nav-bg-color, #d6e5e8);
     border-radius: 20px;
@@ -100,11 +107,19 @@ label {
 }
 
 input {
-    color: #546c6f;
+    color: var(--font-color);
     background-color: var(--nav-bg-color, #d6e5e8);
     border-radius: 20px;
     font-family: Teko;
     font-size: 1.2em;
+}
+
+path{
+    fill: var(--font-color);
+}
+
+g {
+    stroke: var(--font-color);
 }
 
 footer {
@@ -112,7 +127,7 @@ footer {
     margin-bottom: 18px;
     position: absolute;
     bottom: 30px;
-    color: #546c6f;
+    color: var(--font-color);
     .contacts {
         list-style-type: none;
         align-items: center;

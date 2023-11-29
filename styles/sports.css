@@ -1,20 +1,31 @@
 @font-face {
     font-family: "Teko";
-    src: local("Helvetica Neue Bold"),
+    src: local("../teko/Teko-VariableFont_wght.ttf"),
       url("../teko/Teko-VariableFont_wght.ttf");
     font-weight:light;
 }
 
 @font-face {
     font-family: "Abel";
-    src: local("Helvetica Neue Bold"),
+    src: local("../abel/Abel-Regular.ttf"),
       url("../abel/Abel-Regular.ttf");
     font-weight:light;
 }
 
-:root {
+[theme="bright"] {
     --nav-bg-color: #d6e5e8;
     --nav-bg-color-hover: #b8dde5;
+    --font-color: #546c6f;
+    --border-color: #c2e7ec;
+    --gradient-bg: linear-gradient(142deg, rgba(138,133,55,0.49754901960784315) 26%, rgba(50,117,95,0.5031512605042017) 53%, rgba(2,65,78,0.5031512605042017) 80%, rgba(90,45,111,0.5031512605042017) 116%, rgba(113,43,66,0.5) 152%);
+}
+
+[theme="dark"] {
+    --nav-bg-color: #52515e;
+    --nav-bg-color-hover: #706f78;
+    --font-color: #b9b7c2;
+    --border-color: #52515e;
+    --gradient-bg: linear-gradient(138deg, rgba(117,0,133,0.7) 9%, rgba(121,9,59,0.6989501953125) 38%, rgba(0,92,148,0.7) 81%);
 }
 
 body {
@@ -23,7 +34,7 @@ body {
     padding: 0;
     height: 100dvh;
     background: rgb(138,133,55);
-    background: linear-gradient(142deg, rgba(138,133,55,0.49754901960784315) 26%, rgba(50,117,95,0.5031512605042017) 53%, rgba(2,65,78,0.5031512605042017) 80%, rgba(90,45,111,0.5031512605042017) 116%, rgba(113,43,66,0.5) 152%);
+    background: var(--gradient-bg);
 }
 
 header {
@@ -49,7 +60,7 @@ header {
                 display: inline-block;
                 text-align: center;
                 text-decoration: none;
-                color: #546c6f;
+                color: var(--font-color);
                 font-weight: 600;
                 margin-top: 4px;
                 padding: 5px 16px;
@@ -73,7 +84,7 @@ section {
 }
 
 p {
-    color: #546c6f;
+    color: var(--font-color);
     background-color: var(--nav-bg-color, #d6e5e8);
     border: 2px solid #c2e7ec;
     border-radius: 20px;
@@ -82,13 +93,21 @@ p {
 video {
     object-fit: cover;
     object-position: 50% 50%;
-    border: 2px solid #c2e7ec;
+    border: 2px solid var(--border-color);
     border-radius: 20px;
 }
 
 img {
-    border: 2px solid #c2e7ec;
+    border: 2px solid var(--border-color);
     border-radius: 20px;
+}
+
+path{
+    fill: var(--font-color);
+}
+
+g {
+    stroke: var(--font-color);
 }
 
 footer {
@@ -96,7 +115,7 @@ footer {
     margin-top: 18px;
     position:absolute;
     bottom: 50px;
-    color: #546c6f;
+    color: var(--font-color);
 } 
 
 .contacts {
@@ -112,7 +131,6 @@ footer {
         & svg {
             width: 2em;
             height: 2em;
-            color: #546c6f;
             padding: 0px 10px;
             margin-bottom: 10px;
         }
